@@ -13,15 +13,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@RequestMapping("/api/video")
 @RestController
+@RequestMapping(path= "api/videos")
 @RequiredArgsConstructor
 public class VideoController {
     private final VideoService videoService;
-    @PostMapping
+   @PostMapping
 @ResponseStatus(HttpStatus.CREATED)
     public void uploadVideo(@RequestParam("file")MultipartFile file)
-    {
+   {
     videoService.uploadVideo(file);
     }
 
